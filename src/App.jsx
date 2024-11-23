@@ -14,6 +14,7 @@ import RecipeDetails from './components/ReadMoreData/ReadMoreData';
 import { autoLoginAction } from './service/Action/loginRegistrarAction';
 import { useEffect } from 'react';
 
+
 function App() {
     const ProtectedViewData = withLogin(ViewData);
 

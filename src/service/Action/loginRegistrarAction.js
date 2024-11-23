@@ -20,17 +20,20 @@ const logoutSuccess = () => ({ type: 'LogoutSuccess' });
     if (userId) {
       try {
         const userDoc = await getDoc(doc(db, "users", userId));
+
         if (userDoc.exists()) {
           dispatch(loginSuccess(userDoc.data()));
         } else {
           throw new Error("User not found");
         }
+        
       } catch (error) {
         localStorage.removeItem("user-login-id");
         dispatch(logoutSuccess());
       }
     } else {
       const currentUser = auth.currentUser;
+      
       if (currentUser) {
         dispatch(loginSuccess(currentUser));
       } else {

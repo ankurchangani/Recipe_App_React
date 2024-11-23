@@ -20,6 +20,7 @@ const Updatedata = () => {
     title: recipes.title || '',
     ingredients: recipes.ingredients || '',
     instructions: recipes.instructions || '',
+    image: recipes.image || '',
   });
 
   const dispatch = useDispatch();
@@ -82,6 +83,22 @@ const Updatedata = () => {
             id="instructions"
             placeholder="Describe the cooking instructions"
             value={formupdate.instructions}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="image">
+            Image URL
+          </label>
+          <input
+            className="border border-gray-300 p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="text"
+            name="image"
+            id="image"
+            placeholder="Enter image URL"
+            value={formupdate.image}
             onChange={handleChange}
             required
           />
