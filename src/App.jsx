@@ -22,6 +22,8 @@ function App() {
 
     const ProtectedCreateRecipe = withLogin(CreateRecipe);
 
+    const ProtectedRecipeDetails = withLogin(RecipeDetails);
+
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -36,7 +38,7 @@ function App() {
                 <Route path='/RegistrationForm' element={<RegistrationForm />} />
                 <Route path='/login' element={<LoginForm />} />
                 <Route path='/' element={<Home />} />
-                <Route path="/recipe/:id" element={<RecipeDetails />} />
+                <Route path="/recipe/:id" element={<ProtectedRecipeDetails />} />
                 <Route path='/createrecipe' element={<ProtectedCreateRecipe />} />
                 <Route path='/viewrecipe' element={<ProtectedViewData />} />
                 <Route path='/updaterecipe' element={<ProtectedUpdatedata />} />
