@@ -29,6 +29,7 @@ const logoutSuccess = () => ({ type: 'LogoutSuccess' });
         
       } catch (error) {
         localStorage.removeItem("user-login-id");
+        
         dispatch(logoutSuccess());
       }
     } else {
